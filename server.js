@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     List.find({}, (err, lists) => {
         if(err) console.log(err);
         let links = [];
-        lists.forEach(li => links.push(li.date));
+        lists.reverse().forEach(li => links.push(li.date));
         let uniq = [ ...new Set(links) ];
         links = uniq.map(li => {
             return `<a href="/${li}">Listen vom ${li}</a>`;
@@ -25,7 +25,7 @@ app.get('/:date', (req, res) => {
     List.find({ date: req.params.date }, (err, lists) => {
         if(err) console.log(err);
         let html = '';
-        lists.forEach(li => {
+        lists.reverse().forEach(li => {
             html += `<h1>${li.created_at}</h1><br>`;
             html += li.content.replace('\n', '<br>');
             html += '<br><hr><br>';
