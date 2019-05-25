@@ -24,7 +24,7 @@ async function save() {
     links.forEach(a => a.href="");
     const listContent = neModule.innerHTML.replace(/\t+/g, ' ');
     const d = new Date();
-    const hour = fig(d.getHours().toString());
+    const hour = fig((d.getHours()+2).toString());
     const minute = fig(d.getMinutes().toString());
     const date = `${ d.getDate() }-${ fig((d.getMonth()+1).toString()) }-${ d.getFullYear() } ${ hour }:${ minute }`;
     const list = new List({content: listContent, date: date.split(' ')[0], created_at: date});
