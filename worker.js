@@ -11,7 +11,7 @@ const List = mongoose.model('List', schema);
 save();
 setInterval(()=> {
     save();
-}, 1000*60*15);
+}, 1000*60*22);
 
 
 async function save() {
@@ -21,7 +21,7 @@ async function save() {
     });
     const neModule = dom.window.document.querySelector('#newest_episodes');
     const links = neModule.querySelectorAll('a');
-    links.forEach(a => a.href="");
+    links.forEach(a => a.href="#");
     const listContent = neModule.innerHTML.replace(/\t+/g, ' ');
     const d = new Date();
     const hour = fig((d.getHours()+2).toString());
