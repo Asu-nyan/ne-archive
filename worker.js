@@ -10,7 +10,7 @@ const List = mongoose.model('List', schema);
 save();
 setInterval(()=> {
     save();
-}, 1000*61);
+}, 1000*60*15);
 
 
 async function save() {
