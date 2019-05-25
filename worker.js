@@ -1,8 +1,9 @@
 const { JSDOM } = require("jsdom");
 const axios = require('axios');
 const mongoose = require('mongoose');
-const password = 'rachel_0603';
-mongoose.connect(`mongodb+srv://user:${password}@bs-projects-auzep.mongodb.net/test?retryWrites=true`, {useNewUrlParser: true});
+const user = process.env.MONGO_USER;
+const password = process.env.MONGO_PW;
+mongoose.connect(`mongodb+srv://${user}:${password}@bs-projects-auzep.mongodb.net/test?retryWrites=true`, {useNewUrlParser: true});
 const schema = new mongoose.Schema({ content: 'string', date: 'string', created_at: 'string' });
 const List = mongoose.model('List', schema);
 
