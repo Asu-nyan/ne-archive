@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.17.0",
-    "jsdom": "^15.1.0",
+    "jsdom": "^16.5.0",
     "mongoose": "^5.5.11",
     "serve-index": "^1.9.1"
   }
